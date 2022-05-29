@@ -1,5 +1,5 @@
 import vimeoPlayer from '@vimeo/player';
-var throttle = require('lodash.throttle');
+const throttle = require('lodash.throttle');
 
 const STORAGE_KEY = 'videoplayer-current-time';
 
