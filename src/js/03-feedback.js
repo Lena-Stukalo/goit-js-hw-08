@@ -19,8 +19,9 @@ function onFormLocalDataGet() {
   const localData = localStorage.getItem(STORAGE_KEY);
   if (localData) {
     const dataToForm = JSON.parse(localData);
-    formInut.value = dataToForm.email;
-    formTextarea.value = dataToForm.message;
+    formInut.value = dataToForm.email !== undefined ? dataToForm.email : '';
+    formTextarea.value =
+      dataToForm.message !== undefined ? dataToForm.message : '';
   }
 }
 function onSubmitForm(e) {
