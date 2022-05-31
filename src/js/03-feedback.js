@@ -20,12 +20,15 @@ function onFormLocalDataGet() {
   if (localData) {
     const dataToForm = JSON.parse(localData);
     formInut.value = dataToForm.email !== undefined ? dataToForm.email : '';
+    formData.email = formInut.value;
     formTextarea.value =
       dataToForm.message !== undefined ? dataToForm.message : '';
+    formData.message = formTextarea.value;
   }
 }
 function onSubmitForm(e) {
   e.preventDefault();
   e.currentTarget.reset();
   localStorage.removeItem(STORAGE_KEY);
+  console.log(formData);
 }
